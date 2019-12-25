@@ -237,4 +237,16 @@ pipenv shell을 해서 버블 안으로 들어감
 어떤 콘솔을 쓰든 간에 pipenv shell부터 먼저 실행해서
 버블 안으로 들어가야 함
 
+# python manage.py migrate
+
+# python manage.py runserver
+: 웹사이트 만듦, 서버구동
+http://127.0.0.1:8000/admin (관리자 패널 로그인)
+
+# python manage.py createsuperuser
+: 관리자 계정 생성
+
+# db.sqlite3
+: 우리의 데이터베이스
+
 ####################################################################################################
