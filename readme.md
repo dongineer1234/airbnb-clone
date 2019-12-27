@@ -250,3 +250,49 @@ http://127.0.0.1:8000/admin (관리자 패널 로그인)
 : 우리의 데이터베이스
 
 ####################################################################################################
+
+#2.4 Django Migrations
+
+# db.sqlite3 삭제
+: runserver의 빨간색으로 표시되는 메시지를 다시 보고 싶기 때문
+삭제했을 때 출력되는 메시지는 해당 migrations를 적용하지 않으면 우리의 프로젝트가 정상적으로 작동하지 않을 거라는 메시지
+
+# db.sqlite3
+: 데이터베이스 파일이며  초기상태는 비어있는 상태
+우리의 프로젝트에 대해 아무것도 모르는 상태 좋지 않음
+Django 코드를 사용해서 admin, auth, contenttypes, sessions 그밖에 다양한 것들을 저장할 것 sqlite3는 많은 사람들이 테스트, 소규모 프로젝트를 할 때 자주 사용되는 데이터베이스
+데이터베이스는 하나의 상태에서 다른 상태로 다른 데이터 유형으로 바꾸는 것 데이터의 유형이 변경될 때마다 migrate가 필요
+Django는 이미 17개의 migrations를 생성
+
+# python manage.py makemigrations
+: 입력하면 Django는 데이터 models를 확인하고 migration파일을 생성
+No changes detected라고 뜨는데 그건 변경된 데이터가 없기 때문
+하지만 우리는 이미 migrations를 적용한 것
+
+# Django 엔진의 동작 방식
+: 일부 데이터 유형을 변경하고 Django를 사용해서 migrations하는 것
+그 다음 Django를 사용해서 데이터베이스를 업데이트 하는 것
+따라서 먼저 migration을 생성하고 나서 migrate
+그러므로 SQL을 배울 필요가 없음
+데이터유형이 바뀌면 migration을 생성하고 해당 migraion을 적용하는 것
+그리고 데이터베이스를 업데이트 그렇게 되면 데이터베이스와 Django를 동기화할 수 있는 것
+django에는 user system, authentication, administration, sessions 등이
+포함되어 있음 그래서 당연히 migrations를 적용해야 되는 것
+그리고 django와 동일한 데이터 유형을 동기화 하기 위해 데이터베이스를 업데이트 하는것
+
+# python manage.py migrate
+: db.sqlite3에 정보가 쌓임
+데이터유형을 데이터베이스에게 알려주는 정보
+데이터베이스는 django가 결과적으로 ID, password, last_login이 포함된
+인증된 사용자의 정보를 저장하게 될 것이라는 것을 알게 되는 것
+이것이 migration! models를 작성하게 되면 변수들을 수정해야 하기 때문에
+migration에 대해 다룰 예정 예를들어 user는 단순히 first_name과 last_name만 갖고 있음 하지만 gender도 추가 될 수도 있음
+gender를 추가하게 되면 우리는 migration을 생성하고 migrate를 수행하게 될 것임
+
+####################################################################################################
+
+#2.5 Django Applications
+
+
+
+####################################################################################################
