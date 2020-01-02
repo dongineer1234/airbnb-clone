@@ -2,7 +2,7 @@
 
 #0.0 Introduction
 
-# django
+# Django
 : 웹 어플리케이션(파이썬)을 만들기 위해 사용되는 유명한 프레임워크
 
 # tailwindCSS
@@ -24,11 +24,11 @@
 # python
 : function, class, inheritance(상속)
 
-# django, python의 공통점
+# Django, python의 공통점
 : Object Oriented(객체지향) 방식을 따름
 class, inheritance(상속)를 잘 이해하는 게 중요
 
-# django
+# Django
 : 웹 어플리케이션(파이썬)을 만들기 위해 사용되는 유명한 프레임워크
 모든게 class, inheritance로 돌아감 
 
@@ -43,8 +43,8 @@ class, inheritance(상속)를 잘 이해하는 게 중요
 : IDE(Integrated Development Environment)
 오로지 python을 위한 editor
 VSC에서도 기능을 제공 하긴 하지만 PyCharm에서 제공하는 기능이 더 많음
-2개의 version이 있는데 free version에서는 django에 대한 충분한 지원이 없음
-django와 html, js에 대한 지원을 바란다면 Professional version을 받아야 함
+2개의 version이 있는데 free version에서는 Django에 대한 충분한 지원이 없음
+Django와 html, js에 대한 지원을 바란다면 Professional version을 받아야 함
 
 ####################################################################################################
 
@@ -66,16 +66,16 @@ install 중 add path 반드시 체크
 마이크로 프레임워크인 Flask는 직접 해야될 일들이 많음 
 하지만 Django는 그런 부분들을 이미 처리하고 있음
 
-# django
+# Django
 : 웹 어플리케이션(파이썬)을 만들기 위해 사용되는 유명한 프레임워크
 모든게 class, inheritance로 돌아감
-django는 거대한 프레임워크로 사용 예로는 사용자 인증을 처리해주고
-컨텐츠 관리 기능이 있음 관리자 페이지, 사용자 인증이 django를 사용하는 가장 큰 이유
+Django는 거대한 프레임워크로 사용 예로는 사용자 인증을 처리해주고
+컨텐츠 관리 기능이 있음 관리자 페이지, 사용자 인증이 Django를 사용하는 가장 큰 이유
 이미 만들어진 form들이 있어서 필요한 기능(패스워드 바꾸기, 프로필 바꾸기)이 있으면 
 갖다 쓰면 됨 이메일 백엔드도 있어서 이메일 인증도 해줄 수 있음 보안기능도 있음
 아주 빠르고 신속하고 커스터마이징도 쉬움
 airbnb에는 로그인, 로그아웃, 관리자 패널, 뭔가 업로드하고 삭제하는 기능이 필요하기,
-비밀번호 변경하기, 본인확인 이메일 등 기능이 필요 하기 때문에 django가 적합
+비밀번호 변경하기, 본인확인 이메일 등 기능이 필요 하기 때문에 Django가 적합
 
 ####################################################################################################
 
@@ -164,12 +164,12 @@ pipenv shell을 해서 버블 안으로 들어감
 #2.0 Creating a Django Project
 
 # create project
-: django-admin startproject project
+: Django-admin startproject project
 이렇게 하는건 전문가아님
 
 # 전문가의 create project
 : main directory에 진입해서
-django-admin startproject config를 실행
+Django-admin startproject config를 실행
 그리고 바깥 config를 Aconfig로 바꿈
 그 이유는 안에 있는 이 config directory와 manage.py 파일을
 밖으로 꺼낼 것이기 때문 동일 directory명이면 꺼내지지 않으니까
@@ -276,14 +276,14 @@ No changes detected라고 뜨는데 그건 변경된 데이터가 없기 때문
 그러므로 SQL을 배울 필요가 없음
 데이터유형이 바뀌면 migration을 생성하고 해당 migraion을 적용하는 것
 그리고 데이터베이스를 업데이트 그렇게 되면 데이터베이스와 Django를 동기화할 수 있는 것
-django에는 user system, authentication, administration, sessions 등이
+Django에는 user system, authentication, administration, sessions 등이
 포함되어 있음 그래서 당연히 migrations를 적용해야 되는 것
-그리고 django와 동일한 데이터 유형을 동기화 하기 위해 데이터베이스를 업데이트 하는것
+그리고 Django와 동일한 데이터 유형을 동기화 하기 위해 데이터베이스를 업데이트 하는것
 
 # python manage.py migrate
 : db.sqlite3에 정보가 쌓임
 데이터유형을 데이터베이스에게 알려주는 정보
-데이터베이스는 django가 결과적으로 ID, password, last_login이 포함된
+데이터베이스는 Django가 결과적으로 ID, password, last_login이 포함된
 인증된 사용자의 정보를 저장하게 될 것이라는 것을 알게 되는 것
 이것이 migration! models를 작성하게 되면 변수들을 수정해야 하기 때문에
 migration에 대해 다룰 예정 예를들어 user는 단순히 first_name과 last_name만 갖고 있음 하지만 gender도 추가 될 수도 있음
@@ -293,16 +293,16 @@ gender를 추가하게 되면 우리는 migration을 생성하고 migrate를 수
 
 #2.5 Django Applications
 
-# django
+# Django
 : 웹 어플리케이션(파이썬)을 만들기 위해 사용되는 유명한 프레임워크
 모든게 class, inheritance로 돌아감
-django는 거대한 프레임워크로 사용 예로는 사용자 인증을 처리해주고
-컨텐츠 관리 기능이 있음 관리자 페이지, 사용자 인증이 django를 사용하는 가장 큰 이유
+Django는 거대한 프레임워크로 사용 예로는 사용자 인증을 처리해주고
+컨텐츠 관리 기능이 있음 관리자 페이지, 사용자 인증이 Django를 사용하는 가장 큰 이유
 이미 만들어진 form들이 있어서 필요한 기능(패스워드 바꾸기, 프로필 바꾸기)이 있으면 
 갖다 쓰면 됨 이메일 백엔드도 있어서 이메일 인증도 해줄 수 있음 보안기능도 있음
 아주 빠르고 신속하고 커스터마이징도 쉬움
 airbnb에는 로그인, 로그아웃, 관리자 패널, 뭔가 업로드하고 삭제하는 기능이 필요하기,
-비밀번호 변경하기, 본인확인 이메일 등 기능이 필요 하기 때문에 django가 적합
+비밀번호 변경하기, 본인확인 이메일 등 기능이 필요 하기 때문에 Django가 적합
 
 우리가 만든 Django 프로젝트는 여러 application을 포함
 function의 집합임 Django는 무언가를 시작하기 전에 project를 계획하게끔
@@ -333,6 +333,18 @@ Django를 효과적으로 사용하기 위해서는 Divide and Conquer를
 
 #2.6 Creating the Apps!
 
+# Django-admin startapp
+: 무조건 config 밖에서 만들어야 하고
+Application을 만들때는 반드시 복수로
+messages를 생성안한 이유는 messages가 이미 Django안에 있기 때문
 
+# Django안에 Users application이 이미 존재 그런데 왜 user application을 만들었을까?
+: Django Users는 매우 좋음 근데 문제는 이 페이지가 Django Admin에 있다는 것 그리고 전체 서버와 데이터베이스의 Admin창 우리는 유저가 이 페이지에 접근권한이 없기를 원함 그렇기때문에 우리는 실제 사용 유저들만을 위한 분리된 admin창을 필요함 이 창에서는 데이터베이스에 있는 모든 유저와 어떤 내용이든지 바꿀 수 있지만 모든 유저들을 위해 있는 것은 아님 우리와 같은 웹마스터들을 위해서 있는것
+
+이 admin user application 이외에 페이스북으로 로그인, 구글로 로그인 같은 것을 관리할 users application이 따로 필요한 것
+설치된 applications에는 users application이 없음
+
+# 아직 rooms같은 application이 실행되지 않는 이유
+: 아직 application이 설치되지 않았음
 
 ####################################################################################################
