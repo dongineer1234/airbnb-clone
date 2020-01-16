@@ -397,10 +397,54 @@ applications에 각각 만들어줌
 
 ####################################################################################################
 
+#3.1 Introduction to the User Model
+
+# python manage.py makemigrations
+: user migration, User model 생성 user에 관한 별게 다 있음
+
+# python manage.py migrate
+: migration 그리고 서버에 연결하면 오류가 뜨지 않을 것임
+
+# 0001_initial.py
+: 여기 필드에 각종 요소가 있는 이유는 models.py에 AbstractUser을 넣었기 때문
+
+# python manage.py makemigrations
+: user migration, User model 생성 user에 관한 별게 다 있음
+models.py에서 설정 후 명령어 실행 하고 python manage.py migrate
+명령어 실행
+
+####################################################################################################
+
+#3.2 First Model Fields
+
+# bio = models.TextField(default="") default를 붙이는 이유
+: 데이터베이스에 bio의 값이 없어도 default값을 넣어줌
+default를 해줘야 데이터베이스가 처리할 수 있음
+혹은 null=True를 사용하여 데이터베이스에게 이 비어있는 건 신경쓰지마
+할 수 있음 column이 생기기 전부터 있던 데이터를 채움
+
+# docstring
+: python에서 사용 되며 클래스를 만들 때마다 이런 문구를 넣어서
+이게 무슨 클래스인지 알려주는 것
+
+# pillow
+: python의 라이브러리며 없으면 migration이 안됨
+pipenv install Pillow
+
+# models.py
+: 우리가 원하는 database가 어떻게 생겼는지에 대해서 설명
+우리의 data를 변경하는 곳 models를 생성 후 makemigrations하면 필드가 생성됨 물론 다음 migrate까지 해줘야 함 현재 추가된게 avatar, gender, bio avatar에서는 사진도 선택이 가능 gender는 뭐든 입력이 가능
+대단한게 makemigration 후 migrate할 필요가 없음
+값에 blank를 허용하면 데이터베이스에 필수로 값을 넣어주지 않아도 됨
+blank=True를 해줘야 form에 적용됨
+이 모든 것은 전부 Django documentation에서 얻은 정보
 
 
+# char, text 필드의 차이
+: char 필드는 한 줄 텍스트고 글자 수 제한이 있음
+text는 여러줄 쓸 수 있고 글자 수 제한이 없음
 
-
-
+# char 필드
+: 커스텀마이징이 가능 예를들어 초이스를 만들 수 있음
 
 ####################################################################################################
