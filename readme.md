@@ -467,6 +467,22 @@ blank=True를 해줘야 form에 적용됨
 
 #3.4 Falling in Love with Admin Panel
 
-# 
+# admin에 model이 나타나게 만들기
+: @admin.register(models.User) 이것을 decorator이라 부름
+admin.site.register(models.User, CustomUserAdmin) 와 같은 것
+이 말은 admin 패널에서 이 user를 보고 싶다는 말
+decorator은 클래스 바로 위에 있어야 작동함 띄어쓰기 하면 안됨
+
+# list _display
+: Django admin패널 기능 중 하나
+list가 admin에 출력됨
+
+# list_filter
+: Django admin패널 기능 중 하나
+list의 필터기능 가능한 옵션들을 model에서 잘 찾아서 출력해줌
+
+# admin 패널
+: 장고는 기본으로 user를 위한 admin패널이 만들어져 있으므로
+여태만든 건 개념을 설명하기 위하여 작성한 것이고 지우면 됨
 
 ####################################################################################################
