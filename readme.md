@@ -535,10 +535,7 @@ admin패널, auth, sesstions, messages같은 애들임 그리고 PROJECT_APPS는
 : core 폴더가 생기는데 여기서 다른 application에서 재사용 가능한
 common 파일을 만들어 줄거임 그럼 효율적인 작업이 가능함 여기서 model을 만들어주고 이 model을 이용해서 rooms를 확장함 user을 제외한 모든 model은 전부 이 한가지 model을 활용해서 확장할 것임
 
-# class Meta:
+# class Meta: abstract = True
 : 데이터베이스에는 등록되지 않는 model이 됨
-
-
-
 
 ####################################################################################################
