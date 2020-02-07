@@ -500,3 +500,45 @@ list의 필터기능 가능한 옵션들을 model에서 잘 찾아서 출력해�
 설정 후 들어가면 퍼런거 안에 지정한거 그리고 model에서 가져온 avatar, gender, bio 이런게 따라옴 원래 있던거랑 합쳐가지고 더 좋게 만들 수 있음
 
 ####################################################################################################
+
+#3.6 RECAP OMG!
+
+# 정리
+: config는 마스터폴더 같은거고 나머지는 application
+conversations, lists, reservations, reviews, rooms, users 이것들이
+다 application
+application은 function의 그룹
+user에 보면 models와 admin이 있음 우리가 앞에까지 이것들을 구현해 보았음 우리가 장고를 사용하는 게 아니라 장고가 우리 코드를 사용하는 것
+장고는 데이터베이스랑 통신 장고는 장고ORM(object relational mapping)이라는 아주 멋진 걸 탑재하고 있음 이것이 우리의 파이썬 코드를 SQL문으로 바꿔서 데이터베이스가 알아들을 수 있게 만들어줌
+models.py에 집어넣는 것 모두 장고가 알아서 데이터베이스 테이블로 만들어 줌 model은 fields로 이루어져 있음 문자에 사용되는 char필드, text필드, date필드, boolean필드, url필드며 image필드까지 여러 필드가 있음 이미 프레임이 만들어져 있어서 적합하지 않은 파일이나 값을 입력하려해도 장고가 유효성 검사를 하며 허락하지 않음 모든 필드는 데이터베이스로 들어가게 됨 파이썬 코드를 입력하면 장고 magic으로
+sql문으로 장고가 바꿔줌 우리가 model을 직접 보려면 admin 패널에서
+볼 수 있음 admin 패널은 admin.py로 작업해줘야 함
+admin.py에서 model을 가져오려면 register해줘야함
+그러려면 class를 사용해야 됨 class는 기본적으로 model을 조정할 수 있음
+class위에 decorator를 써주면 class의 위치를 알고 CustomUserAdmin class 위에 있으니까 models.User을 Customer User에 적용하려 한다는 것을 알게됨 전에도 말했듯이 admin.py에서 admin 패널의 구성을 바꿀 수 있음 그리고 이건 선택권이 아니라 장고가 이런 식으로 작동하도록 만들어져 있음 장고가 register된 model과 class를 찾은 다음 특정 키워드를 찾을것임 filedset은 퍼런부분임 admin밖에 있는 부분은
+list_display임 장고는 상속이 쓰이는데 이미 만들어둔 기능을 복붙해줌
+장고가 우리가 만든 폴더를 인식하려면 setting.py에 등록해줘야 함
+setting.py에 있는 DJANGO_APPS는 이미 디폴트로 주어진 애들임
+admin패널, auth, sesstions, messages같은 애들임 그리고 PROJECT_APPS는
+우리가 쓰려고 하는 application임 THIRD_PARTY_APPS는 여기에 나중에 다른 사람이 만든 applications를 넣도록 할것임 넣은것을 우리 project에 import할 수 있음  그리고 우리가 만든 User를 쓰려고 AUTH_USER_MODEL를 바꿔줬음 매번 이걸 바꿔 줄 필요는 없음 필요에 따라 장고 User를 사용할 수 있음 application마다 요구사항이 다를 수 있음 그리고 넘어가기전
+데이터베이스와 pycache파일은 꼭 삭제 migration도 삭제 migration은 항상 적게 유지하는 것이 좋음 model을 만들 때 migration은 한 번 해주는 게 좋음 아 그리고 항상 깜빡하는데 수정하면 makemigrate하고 migrate 꼭 해줘라
+
+####################################################################################################
+
+#4.0 TimeStampedModel
+
+# room 생성
+: models.py에서 생성후 admin.py에 등록
+등록하고 나서는 당연히 안뜸 왜냐 migration을 안했기 때문
+
+# django-admin startapp core
+: core 폴더가 생기는데 여기서 다른 application에서 재사용 가능한
+common 파일을 만들어 줄거임 그럼 효율적인 작업이 가능함 여기서 model을 만들어주고 이 model을 이용해서 rooms를 확장함 user을 제외한 모든 model은 전부 이 한가지 model을 활용해서 확장할 것임
+
+# class Meta:
+: 데이터베이스에는 등록되지 않는 model이 됨
+
+
+
+
+####################################################################################################
