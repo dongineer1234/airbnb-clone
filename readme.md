@@ -439,7 +439,6 @@ pipenv install Pillow
 blank=True를 해줘야 form에 적용됨
 이 모든 것은 전부 Django documentation에서 얻은 정보
 
-
 # char, text 필드의 차이
 : char 필드는 한 줄 텍스트고 글자 수 제한이 있음
 text는 여러줄 쓸 수 있고 글자 수 제한이 없음
@@ -537,5 +536,32 @@ common 파일을 만들어 줄거임 그럼 효율적인 작업이 가능함 여
 
 # class Meta: abstract = True
 : 데이터베이스에는 등록되지 않는 model이 됨
+
+####################################################################################################
+
+#4.1 Room Model part One
+
+# pipenv install django-countries
+: config - settings.py가서 INSTALLED APPS에 가서 등록
+페이지 설명에 있는대로 설정해줌
+
+# 좋은코딩 방법
+: 먼저 django랑 관련된 걸 전부 import함
+그리고 외부 패키지를 import해줌 그리고 내가 만든 패키지를 import
+예를들어 파이썬에서 import를 할 경우 가장 위에다 써줌 그다음 django관련 그리고 외부패키지 그 다음 application을 import
+
+# auto_now
+: true해주면 model을 save할 때 date랑 time을 기록
+model을 생성할 때마다 수시로 업데이트
+model이 생성된 날짜를 구하려면 auto_now_add를 써주고
+auto_now true가 새로운 날짜로 업데이트해줌
+
+####################################################################################################
+
+#4.2 Foreing Keys like a Boss
+
+# foreign key
+: 한 모델을 다른 모델과 연결시켜주는 역할
+현재 room model과 host를 연결 일대다 관계
 
 ####################################################################################################
